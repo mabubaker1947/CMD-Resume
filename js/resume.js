@@ -37,36 +37,27 @@ function github(username){
  return mess;
 }
 
-// Variables
-var title = "";
-
 // Command map
 var commandMap = {};
 var commandFunctionMap = {};
 
 function init(){
-
-    splash += "Welcome to " + name + "'s résumé.\n";
-    splash += "Type [[b;#ffffff;#000]help] for commands\n"
-
-    commandMap["splash"] = " - print the welcome screen.";
-    commandFunctionMap["splash"] = splash;
-
-    commandMap["clear"] = " - clear command history from screen.";
-
-    commandMap["github"] = " - list Github repositories.";
+    splash += introduction;
+    splash += "\n" + lookingfor;
+    splash += contact;
+    splash += "\nType [[b;#ffffff;#000]help] for commands\n"
 
     commandMap["name"] = " - owner of the résumé.";
     commandFunctionMap["name"] = name;
 
-    commandMap["pdf"] = " - pdf version of the resume.";
-    commandFunctionMap["pdf"] = pdf;
-
-    commandMap["lookingfor"] = " - looking for.";
-    commandFunctionMap["lookingfor"] = lookingfor;
+    commandMap["whoami"] = " - an introduction to who I am.";
+    commandFunctionMap["whoami"] = introduction;
 
     commandMap["location"] = " - current location.";
     commandFunctionMap["location"] = loc;
+
+    commandMap["lookingfor"] = " - looking for.";
+    commandFunctionMap["lookingfor"] = lookingfor;
 
     commandMap["education"] = " - education history. [-top]";
     commandFunctionMap["education -top"] = getTop(education);
@@ -76,18 +67,8 @@ function init(){
     commandFunctionMap["employment -top"] = getTop(employment);
     commandFunctionMap["employment"] = getAll("Employment:\n", employment);
 
-    commandMap["volunteering"] = " - volunteering history. [-top]";
-    commandFunctionMap["volunteering -top"] = getTop(volunteering);
-    commandFunctionMap["volunteering"] = getAll("Volunteering:\n", volunteering);
-
-    commandMap["awards"] = " - awards obtained.";
-    commandFunctionMap["awards"] = getAll("Awards:\n", awards);
-
-    commandMap["membership"] = " - membership obtained.";
-    commandFunctionMap["membership"] = getAll("Professional membership:\n", membership);
-
-    commandMap["pgpkey"] = " - my public PGP key.";
-    commandFunctionMap["pgpkey"] = publicPGPkey;
+    commandMap["projects"] = " - a list of personal projects which I have been working on.";
+    commandFunctionMap["projects"] = getAllProjects("Projects:\n", projects);
 
     commandMap["skills"] = " - skills obtained. [-languages|l][-tools|t][-concepts|c]";
     commandFunctionMap["skills"] = getSkillTable();
@@ -98,29 +79,53 @@ function init(){
     commandFunctionMap["skills -c"] = commandFunctionMap["skills -concepts"] 
         = getAll("Concepts:\n", skillsConcepts);
 
+    commandMap["volunteering"] = " - volunteering history. [-top]";
+    commandFunctionMap["volunteering -top"] = getTop(volunteering);
+    commandFunctionMap["volunteering"] = getAll("Volunteering:\n", volunteering);
+
+    commandMap["github"] = " - list Github repositories.";
+
     commandMap["socialmedia"] = " - Social Media profiles.";
     commandFunctionMap["socialmedia"] = getSocialMedia();
+
+    commandMap["pgpkey"] = " - my public PGP key. Signature: 474AC37D";
+    commandFunctionMap["pgpkey"] = publicPGPkey;
+
+    commandMap["pdf"] = " - pdf version of the resume.";
+    commandFunctionMap["pdf"] = pdfLink;
+
+    commandMap["splash"] = " - print the welcome screen.";
+    commandFunctionMap["splash"] = splash;
+
+    commandMap["clear"] = " - clear command history from screen.";
 
     commandMap.getKeys = function (){
     var commands = "Available Commands:\n";
     for(var key in this) {
 
         if( typeof this[key] !== 'function') {
-            commands += key + commandMap[key] + "\n";
+            commands += "   [[b;#ffffff;#000]" + key + "]" + commandMap[key] + "\n";
         }
     }
     return commands;
     };
 }
 
-function pdf(){
-    window.open(pdfLink);
-    return "Hint: May need to allow pop-ups.";
-}
+//function pdf(){
+//    window.open(pdfLink);
+//    return "Hint: May need to allow pop-ups.";
+//}
 
 function getAll(result, array){ 
     array.map( function(item) {
         result += (item.join()).replaceAll(",","\t") + "\n";
+    });
+    return result;
+}
+
+function getAllProjects(result, array){ 
+    array.map( function(item) {
+        result += (item.join()).replaceAll(",","\n") + "\n\n";
     });
     return result;
 }
@@ -145,11 +150,17 @@ function getRequired(skillList){
     return result;
 }
 
-function getSkillTable(){ 
-    var result = "\t\t\t|\tProficient\t|\tExperienced\t|\tFamiliar\n";
-    result += "Languages\t|" + getRequired(skillsLanguages).join().replaceAll(",","\t|\t") + "\n";
-    result += "Tools\t|" + getRequired(skillsTools).join().replaceAll(",","\t|\t") + "\n";
-    result += "Concepts\t|" + getRequired(skillsConcepts).join().replaceAll(",","\t|\t") + "\n";
+function getSkillTable(){
+    var result = "";
+
+    var languages = "Languages:\n";
+    result += getAll(languages, skillsLanguages);
+
+    var tools = "\nTools:\n";
+    result += getAll(tools, skillsTools);
+
+    var concepts = "\nConcepts:\n";
+    result += getAll(concepts, skillsConcepts) + "\n";
 
     return result;
 }
@@ -158,6 +169,3 @@ function getTop(array){
     return (array[0].join()).replaceAll(",","\t");
 }
 
-function social() {
-    
-}

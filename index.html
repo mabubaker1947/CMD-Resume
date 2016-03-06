@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Brendon Body's résumé</title>
+    <title>donttase.me</title>
     <meta name="author" content="Brendon Body - www.brendonbody.com"/>
     <meta name="Description" content="JQuery Terminal Resume."/>
     <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
@@ -14,35 +14,26 @@
     <script src="js/resume.js"></script>
     <script src="js/details.js"></script>
     <link href="css/jquery.terminal.css" rel="stylesheet"/>
+    <link href="css/resume.css" rel="stylesheet"/>
 </head>
+
 <body>
 
     <script>
-
 init();
 commandLine();
 
 function commandLine(){
-
-
     jQuery(document).ready(function($) {
         var id = 1;
 
         $('body').terminal(function(command, term) {
             var commandList = command.toLowerCase().split(" ");
 
-            if (commandList[0] == "help") {
+            if (commandList[0] == "help" || commandList[0] ==  "ls") {
                 term.echo(commandMap.getKeys());
             } else if (commandList[0] == "splash"){
-              term.echo(commandFunctionMap["splash"]);
-            } else if (commandList[0] == "man"){
-                if (commandMap[commandList[1]][0] != undefined){
-                    term.echo(commandList[1] + commandMap[commandList[1]][0]);
-                } else if (commandList[1] == undefined){
-                    term.echo ("man: No command entered.");
-                } else {
-                    term.echo ("man: `" + commandList[1] + "` is an unknown command.");
-                }
+                term.echo(commandFunctionMap["splash"]);
             } else if (commandMap[commandList[0]] != undefined){
                 if (commandList[0] == "github"){
 
@@ -106,10 +97,10 @@ term.echo(mess);
     } else {
         term.echo(commandFunctionMap["volunteering"]);
     }
-} else if (commandList[0] == "awards"){
-    term.echo(commandFunctionMap["awards"]);
-} else if (commandList[0] == "memberships"){
-    term.echo(commandFunctionMap["memberships"]);
+} else if (commandList[0] == "whoami"){
+    term.echo(commandFunctionMap["whoami"]);
+} else if (commandList[0] == "projects"){
+    term.echo(commandFunctionMap["projects"]);
 } else if (commandList[0] == "pgpkey"){
     term.echo(commandFunctionMap["pgpkey"]);
 } else if (commandList[0] == "skills"){
@@ -135,6 +126,9 @@ term.echo(mess);
 }
 }, {
     greetings: splash,
+    prompt: function(p){
+       p("~/cv$ ");
+    },
     onBlur: function() {
                 // prevent loosing focus
                 return false;
@@ -142,6 +136,5 @@ term.echo(mess);
         });
 });
 }
-
 </script>
 </body>

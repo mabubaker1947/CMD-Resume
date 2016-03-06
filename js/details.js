@@ -1,10 +1,10 @@
 // Splash message
-var  splash = `
+var splash = `
                                                                      ..;===+.
-                                                                  .:=iiiiii=+=
+                                            .                     .:=iiiiii=+=
                                                                .=i))=;::+)i=+,
                                                             ,=i);)I)))I):=i=;
-                                                         .=i==))))ii)))I:i++
+           .                                             .=i==))))ii)))I:i++
                                                        +)+))iiiiiiii))I=i+:\'
                                   .,:;;++++++;:,.       )iii+:::;iii))+i=\'
                                .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+\'
@@ -17,12 +17,12 @@ var  splash = `
                       =i))IIITTLTLTTTTTTTTTIITTLLTTTII+:i)ii:\'
                      +i))IITTTLLLTTTTTTTTTTTTLLLTTTT+:i)))=,
                      =))ITTTTTTTTTTTLTTTTTTLLLLLLTi:=)IIiii;
-                    .i)IIITTTTTTTTLTTTITLLLLLLLT);=)I)))))i;
+     .              .i)IIITTTTTTTTLTTTITLLLLLLLT);=)I)))))i;
                     :))IIITTTTTLTTTTTTLLHLLLLL);=)II)IIIIi=:
-                    :i)IIITTTTTTTTTLLLHLLHLL)+=)II)ITTTI)i=
+                    :i)IIITTTTTTTTTLLLHLLHLL)+=)II)ITTTI)i=                     .
                     .i)IIITTTTITTLLLHHLLLL);=)II)ITTTTII)i+
                     =i)IIIIIITTLLLLLLHLL=:i)II)TTTTTTIII)i\'
-                  +i)i)))IITTLLLLLLLLT=:i)II)TTTTLTTIII)i;
+                  +i)i)))IITTLLLLLLLLT=:i)II)TTTTLTTIII)i;    .
                 +ii)i:)IITTLLTLLLLT=;+i)I)ITTTTLTTTII))i;
                =;)i=:,=)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;
              +i)ii::,  +)IIITI+:+i)I))TTTTLLTTTTTII))=,
@@ -33,17 +33,26 @@ var  splash = `
      .+=:))iiiiiiii)))+ii;
     .+=;))iiiiii)));ii+
    .+=i:)))))))=+ii+
-  .;==i+::::=)i=;
+  .;==i+::::=)i=;                .
   ,+==iiiiii+,
   \`+=+++;\`
+
+
 `;
-  splash += '\n\n';
 
 // Details
 var name = "David Kirwan";
-var loc = "Waterford City, Ireland";
-var lookingfor = "An opportunity to work with an enthusastic team implementing cutting edge technologies";
-var pdfLink = "http://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9";
+var loc = "Waterford City, Ireland.";
+
+var introduction = `
+Hi my name is David Kirwan, I am a recent computing postgraduate from the Waterford Institute of Technology, and currently based in Waterford City, Ireland. I am an avid supporter of open source software / hardware and I have huge interest in STEM/STEAM(A - Art) fields in general. I'm particularly Interested in the maker movement, where I enjoy building interactive prototypes using embedded system such as Arduino and Raspberry Pi. I'm a member of the local makerspace the South East Makerspace (SEMS) and have been involved in several projects. See the [[b;#ffffff;#000]projects] command for a list of my projects.
+
+Time permitting, I also like to get involved in amateur astronomy and amateur radio. I maintain a 20.1MHz dual dipole antenna array and software defined radio receiver (HackRF), which can be configured for both local and non-terrestrial receiving. I hope to pass my amateur radio licence exam in 2016. In the near future I hope to pursue a Ph.D program in an Astronomy/Computing field.
+`;
+
+var lookingfor = "I'm looking for an opportunity to join and work with an enthusastic team implementing cutting edge technologies in a computing related field.";
+var contact = " If you would like to get in contact with me, you can access a PDF version of this resume, through the [[b;#ffffff;#000]pdf] command.";
+var pdfLink = "https://dl.dropboxusercontent.com/u/19443068/david_kirwan_resume_2016_03_05.pdf";
 
 // Settings
 var showForks = true;
@@ -57,42 +66,67 @@ var bitbucketURL = "https://bitbucket.org/" + bitbucketUsername;
 // If left blank e.g. url = "" then it won't appear
 var websiteURL = "http://donttase.me";
 var blogURL = "http://donttase.me/blog";
+var linkedinURL = "http://donttase.me/linkedin";
 var portfolioURL = "";
 var twitterURL = "https://twitter.com/kirwan_david";
 var facebookURL = "";
 var skypeAccount = "";
-var socialMedia = [["Github", githubURL], ["Bitbucket", bitbucketURL], ["Website", websiteURL], 
-	["Blog", blogURL], ["Portfolio", portfolioURL], ["Twitter", twitterURL], ["Facebook", facebookURL],
-	["Skype", skypeAccount]];
+var toxId = "CEA5C8604C21C1D16D2BA995C62B79917E04130403868AA316FC50C74FB385258382A2E1B9DA";
+var socialMedia = [
+    ["Bitbucket", bitbucketURL],
+    ["Blog", blogURL],
+    ["Facebook", facebookURL],
+    ["Github", githubURL],
+    ["LinkedIn", linkedinURL],
+    ["Portfolio", portfolioURL],
+    ["Skype", skypeAccount],
+    ["Twitter", twitterURL],
+    ["Tox", toxId],
+    ["Website", websiteURL]
+];
 
 // Education list
-var education = [["Waterford Institute of Technology", "Master of Science (Communication Software)", "Graduated September, 2015"],
-	["Waterford Institute of Technology", "Bachelor of Science (Applied Computing)", "Graduated June, 2013"]];
+var education = [
+    ["Waterford Institute of Technology", "Master of Science (Communication Software)", "Graduated September, 2015"],
+    ["Waterford Institute of Technology", "Bachelor of Science (Applied Computing)", "Graduated June, 2013"]
+];
 
 // Employment list
-var employment = [["TSSG", "Software Researcher & Engineer", "June 2013 - Present"]];
+var employment = [
+    ["TSSG", "Software Researcher & Engineer", "June 2013 - Present"]
+];
 
 // Volunteering list
-var volunteering = [["Mentor", "Coder Dojo Waterford", "2012 - 2014"]];	
+var volunteering = [
+    ["Mentor", "Coder Dojo Waterford", "2012 - 2014"]
+];
 
-// Awards list
-var awards = [];
-
-// Membership list
-var membership = [];
+// Projects which I have been involved in
+var projects = [
+    ["Paste", "A simple pastebin/gist clone", "https://github.com/davidkirwan/sinatra_paste"],
+    ["SDRTelescope", "A cheap design for a software defined radio telescope", "https://github.com/davidkirwan/software_defined_radio_telescope"],
+    ["Floppy Octet", "Musical instrument floppy drive midi player", "https://wiki.southeastmakerspace.org/projects/floppy_drive_midi/start"],
+    ["Morse", "Text to morse code audio generator", "https://github.com/davidkirwan/sinatra_morse", "Demo: http://donttase.me/morse"],
+    ["Ardtweeno", "PaaS Gateway to bridge serial to TCP/IP", "https://github.com/davidkirwan/ardtweeno"],
+    ["AirfishBowl", "Autonomous Helium Blimp collaboratively developed at WIT 2013 ", "https://github.com/ElectronicsWIT/AirFishBowl"],
+    ["UsefulDB", "A simple database to store information about useful commands or URLs", "https://github.com/davidkirwan/usefuldb-gem"],
+    ["libretalk", "Android Chat client developed during the 2013/2014 Waterford Coderdojo class", "https://github.com/coderdojowaterford/libretalk"],
+    ["Eve Online Galaxy", "webgl prototype built using three.js", "https://github.com/davidkirwan/InternetSpaceships", "Demo: http://donttase.me/webgl-prototype/index.html"],
+    ["Asciidoc2html-pdf", "TSSG 3MT Documentation Toolchain for building styled HTML and PDF documents", "https://github.com/TSSG/asciidoc2html-pdf"]
+];
 
 // Skills list
-var skillsLanguages = [["Proficient", "C/C++ Java Python"],
-	["Experienced", "C# .NET"],
-	["Familiar", "PHP Javascript Bash"]];
+var skillsLanguages = [
+    ["Android", "Bash", "C", "C++", "C#", "Objective C", "iOS", "Java", "Javascript", "PHP", "Python", "Ruby on Rails", "Ruby", "R"]
+];
 
-var skillsTools = [["Proficient", "Git Wordpress"],
-	["Experienced", "Android Github"],
-	["Familiar", "TCP/IP SVN"]];
+var skillsTools = [
+    ["Ansible", "AWS", "Cucumber", "Capistrano", "Cassandra", "Chef", "Git", "Gitlab", "gerrit", "HAProxy", "Heroku", "Jenkins", "Jira", "Linux", "MongoDB", "MySQL", "OpenStack", "Puppet", "rspec", "Storm", "SVN", "TravisCI", "Vagrant", "Zabbix"]
+];
 
-var skillsConcepts = [["Proficient", "Kanban Agile"],
-	["Experienced", "Functional Testing"],
-	["Familiar", "Functional Programming"]];
+var skillsConcepts = [
+    ["Agile Software Engineering", "Continuous Integration", "Design Patterns", "Functional Testing", "Project Management", "System Architecture", "Functional Programming"]
+];
 
 var publicPGPkey = `
 -----BEGIN PGP PUBLIC KEY BLOCK-----
