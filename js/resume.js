@@ -56,6 +56,9 @@ function init(){
 
     commandMap["github"] = " - list Github repositories.";
 
+    commandMap["whoiam"] =" - My Introduction";
+    commandFunctionMap["whoiam"]= introduction;
+
     commandMap["name"] = " - owner of the résumé.";
     commandFunctionMap["name"] = name;
 
@@ -89,7 +92,7 @@ function init(){
     commandMap["pgpkey"] = " - my public PGP key.";
     commandFunctionMap["pgpkey"] = publicPGPkey;
 
-    commandMap["skills"] = " - skills obtained. [-languages|l][-tools|t][-concepts|c]";
+    commandMap["skills"] = " - skills obtained. [-languages|l] [-tools|t] [-concepts|c]";
     commandFunctionMap["skills"] = getSkillTable();
     commandFunctionMap["skills -l"] = commandFunctionMap["skills -language"] 
         = getAll("Languages:\n", skillsLanguages);
@@ -106,7 +109,7 @@ function init(){
     for(var key in this) {
 
         if( typeof this[key] !== 'function') {
-            commands += key + commandMap[key] + "\n";
+            commands += "   [[b;#ffffff;#000]" + key + "] \t \t" + commandMap[key] + "\n";
         }
     }
     return commands;

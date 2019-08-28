@@ -2,18 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Brendon Body's résumé</title>
-    <meta name="author" content="Brendon Body - www.brendonbody.com"/>
+    <title>Muhammad Abubaker's résumé</title>
+    <meta name="author" content="Muhammad Abubaker - Brandond Body - David Kirwan"/>
     <meta name="Description" content="JQuery Terminal Resume."/>
     <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
     <link rel="shortcut icon" href="favicon.ico"/>
 
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/jquery.mousewheel-min.js"></script>
-    <script src="js/jquery.terminal-min.js"></script>
+    <script src="js/jquery.terminal.min.js"></script>
     <script src="js/resume.js"></script>
     <script src="js/details.js"></script>
     <link href="css/jquery.terminal.css" rel="stylesheet"/>
+    <link href="css/jquery.resume.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -31,7 +32,7 @@ function commandLine(){
         $('body').terminal(function(command, term) {
             var commandList = command.toLowerCase().split(" ");
 
-            if (commandList[0] == "help") {
+            if (commandList[0] == "help" || commandList[0] == "ls") {
                 term.echo(commandMap.getKeys());
             } else if (commandList[0] == "splash"){
               term.echo(commandFunctionMap["splash"]);
@@ -121,7 +122,8 @@ term.echo(mess);
             term.echo("Warning: Invalid arguments");
         }
     } else {
-        term.echo(commandFunctionMap[commandList[0]]);
+//        term.echo(commandFunctionMap[commandList[0]]);
+       term.echo("Correct Usage: skills [--option] \n options=> [-languages|l][-tools|t][-concepts|c]" );
     }
 } else {
     term.echo(commandFunctionMap[commandList[0]]);
