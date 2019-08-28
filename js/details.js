@@ -2,47 +2,53 @@
 var splash = `
                                                                      ..;===+.
                                                                   .:=iiiiii=+=
-                                                               .=i))=;::+)i=+,
+                                    o            .             .=i))=;::+)i=+,
                                                             ,=i);)I)))I):=i=;
-                                                         .=i==))))ii)))I:i++
+                                     .                   .=i==))))ii)))I:i++
                                                        +)+))iiiiiiii))I=i+:\'
-                                  .,:;;++++++;:,.       )iii+:::;iii))+i=\'
-                               .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+\'
+                    o             .,:;;++++++;:,.       )iii+:::;iii))+i=\'
+                               .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+\'  o
                              ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:
-                           ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
-                          ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,
+                 .         ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
+                          ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,      .
                         ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+
-                       ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i=\'
+                       ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i=\'    .
                       ,=i))IIIIITLLTTTTTTTTTTIITTTTIII)+;+i)+i\`
-                      =i))IIITTLTLTTTTTTTTTIITTLLTTTII+:i)ii:\'
-                     +i))IITTTLLLTTTTTTTTTTTTLLLTTTT+:i)))=,
+                      =i))IIITTLTLTTTTTTTTTIITTLLTTTII+:i)ii:\'   .
+       o             +i))IITTTLLLTTTTTTTTTTTTLLLTTTT+:i)))=,
                      =))ITTTTTTTTTTTLTTTTTTLLLLLLTi:=)IIiii;
                     .i)IIITTTTTTTTLTTTITLLLLLLLT);=)I)))))i;
                     :))IIITTTTTLTTTTTTLLHLLLLL);=)II)IIIIi=:
                     :i)IIITTTTTTTTTLLLHLLHLL)+=)II)ITTTI)i=
                     .i)IIITTTTITTLLLHHLLLL);=)II)ITTTTII)i+
-                    =i)IIIIIITTLLLLLLHLL=:i)II)TTTTTTIII)i\'
+        .           =i)IIIIIITTLLLLLLHLL=:i)II)TTTTTTIII)i\'
                   +i)i)))IITTLLLLLLLLT=:i)II)TTTTLTTIII)i;
-                +ii)i:)IITTLLTLLLLT=;+i)I)ITTTTLTTTII))i;
+                +ii)i:)IITTLLTLLLLT=;+i)I)ITTTTLTTTII))i;                       .
                =;)i=:,=)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;
              +i)ii::,  +)IIITI+:+i)I))TTTTLLTTTTTII))=,
-           :=;)i=:,,    ,i++::i))I)ITTTTTTTTTTIIII)=+\'
+           :=;)i=:,,    ,i++::i))I)ITTTTTTTTTTIIII)=+\'     o
          .+ii)i=::,,   ,,::=i)))iIITTTTTTTTIIIII)=+
-        ,==)ii=;:,,,,:::=ii)i)iIIIITIIITIIII))i+:\'
+        ,==)ii=;:,,,,:::=ii)i)iIIIITIIITIIII))i+:\'   .
        +=:))i==;:::;=iii)+)=  \`:i)))IIIII)ii+\'
      .+=:))iiiiiiii)))+ii;
     .+=;))iiiiii)));ii+
    .+=i:)))))))=+ii+
-  .;==i+::::=)i=;
-  ,+==iiiiii+,
+  .;==i+::::=)i=;                       .                           .
+  ,+==iiiiii+,             o
   \`+=+++;\`
 `;
 
 // Details
-var name = "John Doe";
-var loc = "Timbuktu";
-var lookingfor = "Raking in the money";
-var pdfLink = "http://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9";
+var pdfLink = "https://www.dropbox.com/s/zei99u446juhimu/CV_AB_Oct-2016.pdf?dl=0";
+var introduction= `Hi my name is Muhammad Abubaker, Earning food by pressing keyboard buttons in an order :-) . Developing Software & Intellgent Systems.
+My tech interest lies in DataScience, IoT, and Robo-AI.
+
+Time permitting, I like to explore and hike to the mountains. Love playing football and watching WWE`;
+
+var loc="Limerick City, Ireland"
+var name="Muhammad Abubaker";
+var lookingfor = "I'm looking for an opportunity to work/study in Information security & Data Science";
+
 
 // Settings
 var showForks = true;
@@ -54,57 +60,60 @@ var githubURL = "https://github.com/" + githubUsername;
 var bitbucketURL = "https://bitbucket.org/" + bitbucketUsername;
 
 // If left blank e.g. url = "" then it won't appear
-var websiteURL = "http://www.example.com/";
+var websiteURL = "http://datumflux.org/";
 var blogURL = "";
+var linkedInURL="https://ie.linkedin.com/in/mabubakercs";
 var portfolioURL = "";
 var twitterURL = "https://twitter.com/";
 var facebookURL = "";
 var skypeAccount = "test";
-var socialMedia = [["Github", githubURL], ["Bitbucket", bitbucketURL], ["Website", websiteURL], 
-	["Blog", blogURL], ["Portfolio", portfolioURL], ["Twitter", twitterURL], ["Facebook", facebookURL],
-	["Skype", skypeAccount]];
+
+var socialMedia = [
+["Linkedin", linkedInURL],
+["Github", githubURL],
+ ["Bitbucket", bitbucketURL],
+  ["Website", websiteURL], 
+	["Blog", blogURL],
+   ["Portfolio", portfolioURL],
+    ["Twitter", twitterURL],
+     ["Facebook", facebookURL],
+       ["Skype", skypeAccount]];
 
 // Education list
-var education = [["University of Queensland", "Bachelor of Engineering (Software Engineering)", "Graduate July, 2014"],
-	["Summer University", "Summer Program", "June-July 2013"],["Tianjin University", "Research", "June-July 2012"],
-	["Chinese University of Hong Kong", "Exchange Student", "September-December 2011"],
-	["Beijing University of Internation Relations", "Language course", "July-August"]];
+var education = [["Waterford Institute of Technology, Waterford, Ireland", "MSc in Computing (Enterprise Software Systems)", "2016-On Hold"],
+	["FAST-National Univeristy of Computer and Emerging Sciences, Islamabad, Pakistan", "Bachelor of Science (Computer Science)", "August 2011-July 2015"]];
 
 // Employment list
-var employment = [["Westpac Banking Group", "Software Engineering Intern", "November 2013 - February 2014"],
-	["APS Mining", "Test Engineering Intern", "December 2012 - November 2013"],
-	["Keays Software", "Software Engineering Intern", "April 2012 - November 2013"],
-	["Google Australia", "Student Ambassador", "January 2013 - November 2013"],
-	["Wali Information Technology", "IT Intern", "January 2012 - February 2012"]];
+var employment = [["Becton and Dickinson & Co.", "Software Engineer", "January 2017 - To Date"],
+	["Telecommunication Software and Systems Group", "Software Developer", "November 2015 - January 2017"],
+	["Microsoft Innovation Center", "Software Developer Intern", "February 2013 - April 2013"]];
 
 // Volunteering list
-var volunteering = [["Mentor", "Coder Dojo Brisbane", "July - September 2013"],
-	["Director of IT", "Australia China Youth Association (National)", "January - September 2013"],
-	["Rescue Referee", "RoboCup Junior Australia", "August 2012"]];	
+var volunteering = [["Head at IEEE", "National Mobile App Development Competition", "September 2014"],
+["Head at NaSCoN", "National Software Project Competition", "April 2014"],
+["Officer at NaSCoN", "Speed Programming Competition", "April 2013"],
+["Volunteer", "Rescue 1122, Punjab Emergency Service", "August 2012"]];
 
 // Awards list
-var awards = [["HSK Level 5", "Hanban Institute", "December 2013"],
-	["Certificate of Achievement", "ACM South Pacific Regional Programming Contest", "2013"],
-	["Dean's Commendation", "The University of Queensland", "2011 and 2012"]];
+var awards = [["National ICT Merit Scholarship Holder", "FAST-NUCES", "2011-2015"],
+	["Winner at Microsoft Hackathon", "Punjab Youth Festival, Lahore, Pakistan", "2014"],
+	["Winner at Microsoft Hackathon", "Softcom'13 GIKI", "2013"]];
 
 // Membership list
-var membership = [["Australian Computer Society", "Associate Member"],
-	["Engineers Australia", "Student Member"],
-	["Institute of Electrical and Electronics Engineers", "Student Member"]];
+var membership = [["FAST Computing Society", "Associate Member"],
+	["FAST Adventure Society", "Member"]];
 
 // Skills list
-var skillsLanguages = [["Proficient", "C/C++ Java Python"],
-	["Experienced", "C# .NET"],
-	["Familiar", "PHP Javascript Bash"]];
+var skillsLanguages = [["Proficient", "Java(JSE,JEE) C# Javascript NodeJS UML XML SQL"],
+	["Experienced", ".NET C/C++ PHP R LISP"],
+	["Familiar", "Microstrategy  Bash Python VBasic "]];
 
-var skillsTools = [["Proficient", "Git Wordpress"],
-	["Experienced", "Android Github"],
-	["Familiar", "TCP/IP SVN"]];
+var skillsTools = [["Proficient", "Docker AWS Azure OpenStack Git Tableau Linux MongoDB MySQL Postgres"],
+	["Experienced", "Android-Studio Visual-Studio Eclipse Netbeans Gitlab WEKA"],
+	["Familiar", "Jenkins TCP/IP SVN Wordpress"]];
 
-var skillsConcepts = [["Proficient", "Kanban Agile"],
-	["Experienced", "Functional Testing"],
+var skillsConcepts = [["Proficient", "Kanban Agile Scrum Master, Data warehousing, Data Analytics,"],
+	["Experienced", "UML Database-Designing Advance Networking (SDN & NFV)"],
 	["Familiar", "Functional Programming"]];
 
-var publicPGPkey = `
-YOUR PGP KEY HERE
-`;
+var publicPGPkey = ``;
